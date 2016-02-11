@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+group = 'com.github.vdemeester'
+version = '0.1.0-SNAPSHOT'
+
+jar {
+    baseName = 'jcompose'
+}
+
+dependencies {
+    compile 'com.spotify:docker-client:3.5.12'
+    compile 'org.slf4j:slf4j-api:1.7.14'
+
+    testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
