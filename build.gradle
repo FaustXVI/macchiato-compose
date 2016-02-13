@@ -7,7 +7,7 @@ group = 'com.github.vdemeester'
 version = '0.1.0-SNAPSHOT'
 
 jar {
-    baseName = 'jcompose'
+    baseName = 'maccchiato-compose'
 }
 
 dependencies {

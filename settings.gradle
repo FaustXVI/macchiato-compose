@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'silver-lamp'
+rootProject.name = 'macchiato-compose'
