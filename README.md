@@ -1,4 +1,4 @@
-# Macchiato compose [![Build Status](https://travis-ci.org/vdemeester/silver-lamp.svg?branch=master)](https://travis-ci.org/vdemeester/silver-lamp)
+# Macchiato compose [![Build Status](https://travis-ci.org/vdemeester/macchiato-compose.svg?branch=master)](https://travis-ci.org/vdemeester/macchiato-compose)
 
 A java library for Docker Compose. It does everything the command-line tool does,
 but from within Java – read composes files, start them, scale them, etc..
