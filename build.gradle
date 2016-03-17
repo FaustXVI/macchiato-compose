@@ -2,6 +2,8 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
 
 group = 'com.github.vdemeester'
 version = '0.1.0-SNAPSHOT'
@@ -11,7 +13,7 @@ jar {
 }
 
 dependencies {
-    compile 'com.spotify:docker-client:3.5.12'
+    compile 'com.github.docker-java:docker-java:3.0.0-RC3'
     compile 'org.slf4j:slf4j-api:1.7.14'
 
     testCompile 'junit:junit:4.12'
