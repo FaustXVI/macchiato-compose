@@ -43,3 +43,12 @@ There is also other citizens with the `v2` of the compose yaml files :
 - networks : network definitions
 
 See the `docker-compose` yaml file [reference](https://docs.docker.com/compose/compose-file/).
+
+## Macchiato specifics
+
+`macchiato` should support some event and/or hook mechanism like
+[libcompose](https://github.com/docker/libcompose) does for example.
+
+The basic idea is to be able to react to event when using `macchiato`.
+The code using `macchiato` could execute something in case of project
+starting event, or container created, etc…
