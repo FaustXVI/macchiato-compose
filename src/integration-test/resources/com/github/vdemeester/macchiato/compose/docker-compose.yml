@@ -1,0 +1,4 @@
+# Simple compose file version 1
+true:
+  image: busybox
+  command: top

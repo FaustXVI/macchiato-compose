@@ -8,8 +8,28 @@ apply plugin: 'findbugs'
 group = 'com.github.vdemeester'
 version = '0.1.0-SNAPSHOT'
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
 jar {
     baseName = 'maccchiato-compose'
+}
+
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/integration-test/java')
+        }
+        resources.srcDir file('src/integration-test/resources')
+    }
+}
+
+
+configurations {
+    integrationTestCompile.extendsFrom testCompile
+    integrationTestRuntime.extendsFrom testRuntime
 }
 
 dependencies {
@@ -17,7 +37,24 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.14'
 
     testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.3.0'
 }
+
+//Create the task that runs the integration tests found from the
+//configured source directory and uses the correct classpath.
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    //If you want to ensure that integration tests are run every time when you invoke
+    //this task, uncomment the following line.
+    //outputs.upToDateWhen { false }
+}
+
+//Ensure that the check task fails the build if there are failing integration tests.
+check.dependsOn integrationTest
+//Ensure that our unit tests are run before our integration tests
+integrationTest.mustRunAfter test
+
 
 repositories {
     mavenCentral()

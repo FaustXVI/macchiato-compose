@@ -7,7 +7,7 @@ Please file bug reports and feature requests to https://github.com/vdemeester/ma
 # Making changes
 
 - Fork the repository on Github
-- Create a topic branch from where you want to base your work (usually the master branch)
+- com.github.vdemeester.macchiato.compose.Create a topic branch from where you want to base your work (usually the master branch)
 - Check the formatting rules from existing code (no trailing whitepace, mostly default indentation)
 - Ensure any new code is well-tested, and if possible, any issue fixed is covered by one or more new tests
 - Verify that all tests pass using `./gradlew check`
