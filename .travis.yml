@@ -1,6 +1,16 @@
-language: Java
+sudo: required
 
-jdk:
-  - oraclejdk8
-  - oraclejdk7
-  - openjdk7
+services:
+  - docker
+
+install:
+  - sudo service docker stop
+  - sudo curl https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 -o /usr/bin/docker
+  - sudo chmod +x /usr/bin/docker
+  - sudo service docker start
+
+before_script:
+  - docker version
+
+script:
+  - ./gradlew check
