@@ -15,5 +15,6 @@ include 'shared'
 include 'api'
 include 'services:webservice'
 */
-
 rootProject.name = 'macchiato-compose'
+include 'macchiato-compose-core'
+
